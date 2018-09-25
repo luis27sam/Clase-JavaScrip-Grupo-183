@@ -44,7 +44,7 @@ console.log(res);
 */
 /*
 Hacer una funcion que entregue el IVA de un producto.
-*/
+
 function iva(precio_producto){
 	var iva_producto = precio_producto* 0.19;
 	return iva_producto;
@@ -52,3 +52,29 @@ function iva(precio_producto){
 
 var resultado= iva(67000)
 console.log(resultado);
+
+var titulos = document.getElementsByTagName("h1");
+console.log(titulos)
+
+var clasetexto = document.getElementsByClassName('texto');
+console.log(clasetexto);
+
+var sede = document.getElementById('sede');
+console.log(sede);
+*/
+
+function iva(precio_producto,porcentaje_iva){
+	var iva_producto = precio_producto* (porcentaje_iva/100);
+	return iva_producto;
+}
+
+function calcular_iva(){
+	var precio = parseInt(document.getElementById('precio').value);
+	var porcentaje_iva = parseInt(document.getElementById('iva').value);
+
+	var resultado = iva(precio, porcentaje_iva);
+	var salida = document.getElementById('resultado');
+	var texto = document.createTextNode(resultado);
+	salida.value=resultado;
+
+}
